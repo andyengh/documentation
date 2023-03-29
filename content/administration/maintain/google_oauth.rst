@@ -38,9 +38,21 @@ you are using a personal Gmail account, then leave the :guilabel:`Location` as `
    :align: center
    :alt: Project Name and Location for Google Oauth.
 
-Click on :guilabel:`Create` to finish this step. On the next screen, :guilabel:`User Type` options,
-select the :guilabel:`External` option, and then click on :guilabel:`Create` again, which will
+Click on :guilabel:`Create` to finish this step.
+
+OAuth consent screen
+--------------------
+
+Click on :guilabel:`OAuth consent screen` in the left menu, under :guilabel:`User Type` options,
+select the appropriate :guilabel:`User Type`, and then click on :guilabel:`Create` again, which will
 finally navigate to the :guilabel:`Edit app registration` page.
+
+.. warning::
+   Personal Gmail accounts are only allowed to be :guilabel:`External` User Type, which means Google
+   may require an approval, or for :guilabel:`Scopes` to be added on. Using a Google WorkSpace
+   account allows for :guilabel:`Internal` User Type. It should also be noted, that while the API
+   connection is in the :guilabel:`External` :guilabel:`Testing` mode, then no approval is necessary
+   from Google. User limits in this *testing* mode is set to 100 users.
 
 Edit app registration
 ---------------------
@@ -56,26 +68,25 @@ Edit app registration
 - Next, click on the :guilabel:`Save and Continue` button.
 - Then, skip the :guilabel:`Scopes` page by scrolling to the bottom and clicking on
   :guilabel:`Save and Continue`.
-- Next, add the email being configured under the :guilabel:`Test users` step by clicking on
-  :guilabel:`Add Users` and then the :guilabel:`Save and Continue` button. A summary of the
-  :guilabel:`App registration` appears.
+- Next, if continuing in testing mode (External), add the email addresses being configured under the
+  :guilabel:`Test users` step, by clicking on :guilabel:`Add Users`, and then the :guilabel:`Save
+  and Continue` button. A summary of the :guilabel:`App registration` appears.
 - Finally, scroll to the bottom and click on :guilabel:`Back to Dashboard`.
 
 Create Credentials
 ------------------
 
-Now that you have set up the project, you need to create credentials, which includes the
-:guilabel:`Client ID` and :guilabel:`Client Secret`. First, click on :guilabel:`Credentials` in the
-left sidebar menu.
+Now that the project is set up, credentials should be created, which includes the :guilabel:`Client
+ID` and :guilabel:`Client Secret`. First, click on :guilabel:`Credentials` in the left sidebar menu.
 
-Then, click on :guilabel:`Create Credentials` in the top menu and select
-:guilabel:`OAuth client ID` from the dropdown menu.
+Then, click on :guilabel:`Create Credentials` in the top menu and select :guilabel:`OAuth client ID`
+from the dropdown menu.
 
 - Under :guilabel:`Application Type`, select :guilabel:`Web Application` from the dropdown menu.
-- In the :guilabel:`Client ID` field, enter `Odoo`.
+- In the :guilabel:`Name` field, enter `Odoo`.
 - Under the :guilabel:`Authorized redirect URIs` label, click the button :guilabel:`ADD URI`, and
   then input `https://yourdbname.odoo.com/google_gmail/confirm` in the :guilabel:`URIs 1` field. Be
-  sure to replace the *yourdbname* part of the URL with your actual Odoo database name.
+  sure to replace the *yourdbname* part of the URL with the actual Odoo database name.
 - Next, click on :guilabel:`Create` to generate an OAuth :guilabel:`Client ID` and
   :guilabel:`Client Secret`. Finally, copy each generated value for later use when configuring in
   Odoo, and then navigate to the Odoo database.
@@ -108,9 +119,10 @@ After that, on the :guilabel:`General Settings` page, under :guilabel:`Custom Em
    :align: center
    :alt: Configure Outgoing Email Servers in Odoo.
 
-Then, :guilabel:`Create` a new email server and select the option for :guilabel:`Gmail`. Next, fill
-in the :guilabel:`Description` (can be anything) and the email :guilabel:`Username` and click on
-:guilabel:`Connect your Gmail account`.
+Then, click on :guilabel:`New` to create a new email server. Next, fill in the
+:guilabel:`Description` (can be anything) and the email :guilabel:`Username`, and click on
+:guilabel:`Gmail OAuth Authentication` (under the :guilabel:`Authenticate with` field). Finally,
+click on :guilabel:`Connect your Gmail Account`.
 
 A new window from :guilabel:`Google` opens to complete the authorization process. Select the
 appropriate email address that is being configured in Odoo.
@@ -127,9 +139,8 @@ server in Odoo. The configuration automatically loads the token in Odoo, and a t
    :align: center
    :alt: Configure Outgoing Email Servers in Odoo.
 
-Finally, save the settings and :guilabel:`Test the Connection`. A confirmation message should
-appear. The Odoo database can now send safe, secure emails through Google using OAuth
-authentication.
+Finally, :guilabel:`Test the Connection`. A confirmation message should appear. The Odoo database
+can now send safe, secure emails through Google using OAuth authentication.
 
 Google OAuth FAQ
 ================
@@ -158,9 +169,8 @@ populate.
    :align: center
    :alt: 403 Access Denied Error.
 
-To correct this error, return to the :guilabel:`OAuth consent screen` under
-:guilabel:`APIs & Services` and add test user(s) to the app. Add the email that you are configuring
-in Odoo.
+To correct this error, return to the :guilabel:`OAuth consent screen` under :guilabel:`APIs &
+Services` and add test user(s) to the app. Add the email that you are configuring in Odoo.
 
 Gmail Module not updated
 ------------------------
@@ -179,17 +189,16 @@ the three dots on the upper right of the module and select :guilabel:`Upgrade`.
 Application Type
 ----------------
 
-When creating the :guilabel:`Credentials` (OAuth Client ID and Client Secret), if
-:guilabel:`Desktop App` is selected for the :guilabel:`Application Type`, an
-:guilabel:`Authorization Error` appears.
+When creating the :guilabel:`Credentials` (OAuth Client ID and Client Secret), if :guilabel:`Desktop
+App` is selected for the :guilabel:`Application Type`, an :guilabel:`Authorization Error` appears.
 
 .. image:: google_oauth/error-400.png
    :align: center
    :alt: Error 400 Redirect URI Mismatch.
 
 To correct this error, delete the credentials already created and create new credentials, selecting
-:guilabel:`Web Application` for the :guilabel:`Application Type`. Then, under
-:guilabel:`Authorized redirect URIs`, click :guilabel:`ADD URI` and type:
+:guilabel:`Web Application` for the :guilabel:`Application Type`. Then, under :guilabel:`Authorized
+redirect URIs`, click :guilabel:`ADD URI` and type:
 `https://yourdbname.odoo.com/google_gmail/confirm` in the field.
 
 .. note::
