@@ -42,7 +42,7 @@ Started: Development environment setup <../tutorials/getting_started/02_setup>` 
 The last things to do are:
 
 - Clone the `official Odoo tutorials repository <https://github.com/odoo/tutorials>`_ and switch to
-  the branch `{BRANCH}`.
+  the branch `{CURRENT_MAJOR_BRANCH}`.
 - Add the cloned repository to the :option:`--addons-path <odoo-bin --addons-path>`.
 - Start a new Odoo database and install the modules `owl_playground`, `awesome_tshirt`, and
   `awesome_gallery`.

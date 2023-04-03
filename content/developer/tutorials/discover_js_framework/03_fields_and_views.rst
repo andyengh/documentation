@@ -129,8 +129,9 @@ views (namely: `form`, `list`, `kanban`) by using the `widget` attribute.
 
 .. spoiler:: Solutions
 
-   The solutions for each exercise of the chapter are hosted on the `official Odoo tutorials
-   repository <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
+   The solutions for each exercise of the chapter are hosted on the
+   `official Odoo tutorials repository
+   <https://github.com/odoo/tutorials/commits/{CURRENT_MAJOR_BRANCH}-solutions/awesome_tshirt>`_.
 
 1. An `image_preview` field
 ===========================

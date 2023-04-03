@@ -33,8 +33,9 @@ opportunity to discover many useful features in the Odoo JavaScript framework.
 
 .. spoiler:: Solutions
 
-   The solutions for each exercise of the chapter are hosted on the `official Odoo tutorials
-   repository <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/awesome_tshirt>`_.
+   The solutions for each exercise of the chapter are hosted on the
+   `official Odoo tutorials repository
+   <https://github.com/odoo/tutorials/commits/{CURRENT_MAJOR_BRANCH}-solutions/awesome_tshirt>`_.
 
 1. A new Layout
 ===============

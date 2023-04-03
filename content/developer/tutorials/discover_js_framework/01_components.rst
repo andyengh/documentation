@@ -60,8 +60,9 @@ intended to quickly understand and practice the basics of Owl.
 
 .. spoiler:: Solutions
 
-   The solutions for each exercise of the chapter are hosted on the `official Odoo tutorials
-   repository <https://github.com/odoo/tutorials/commits/{BRANCH}-solutions/owl_playground>`_.
+   The solutions for each exercise of the chapter are hosted on the
+   `official Odoo tutorials repository
+   <https://github.com/odoo/tutorials/commits/{CURRENT_MAJOR_BRANCH}-solutions/owl_playground>`_.
 
 1. Displaying a counter
 =======================
