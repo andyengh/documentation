@@ -47,8 +47,8 @@ The last things to do are:
 - Start a new Odoo database and install the modules `owl_playground`, `awesome_tshirt`, and
   `awesome_gallery`.
 
-Exercises
-=========
+Chapters
+========
 
 * :doc:`discover_js_framework/01_components`
 * :doc:`discover_js_framework/02_odoo_web_framework`

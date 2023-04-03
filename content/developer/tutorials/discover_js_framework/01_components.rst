@@ -18,17 +18,17 @@ small JavaScript class subclassing the `Component` class.
 
    .. code-block:: js
 
-      const { Component, useState } = owl;
+      import { Component, useState } from "@odoo/owl";
 
-       class Counter extends Component {
-           static template = "my_module.Counter";
+      class Counter extends Component {
+          static template = "my_module.Counter";
 
-           state = useState({ value: 0 });
+          state = useState({ value: 0 });
 
-           increment() {
-               this.state.value++;
-           }
-       }
+          increment() {
+              this.state.value++;
+          }
+      }
 
    The `Counter` class specifies the name of the template to render. The template is written in XML
    and defines a part of user interface.
@@ -78,9 +78,9 @@ route with your browser.
 .. exercise::
 
    #. Modify :file:`playground.js` so that it acts as a counter like in :ref:`the example above
-      <jstraining/chapter1/intro_example>`. You will need to use the `useState
-      <{OWL_PATH}/doc/reference/hooks.md#usestate>`_ function so that the component is re-rendered
-      whenever any part of the state object has been read by this component is modified.
+      <jstraining/chapter1/intro_example>`. You will need to use the `useState hook
+      <{OWL_PATH}/doc/reference/hooks.md#usestate>`_ so that the component is re-rendered
+      whenever any part of the state object that has been read by this component is modified.
    #. In the same component, create an `increment` method.
    #. Modify the template in :file:`playground.xml` so that it displays your counter variable. Use
       `t-esc <{OWL_PATH}/doc/reference/templates.md#outputting-data>`_ to output the data.
@@ -102,11 +102,10 @@ For now we have the logic of a counter in the `Playground` component, let us see
 `sub-component <{OWL_PATH}/doc/reference/component.md#sub-components>`_ from it.
 
 .. exercise::
-
    #. Extract the counter code from the `Playground` component into a new `Counter` component.
    #. You can do it in the same file first, but once it's done, update your code to move the
-      `Counter` in its own file.
-   #. Make sure the template is in its own file, with the same name.
+      `Counter` in its own folder and file. Import it relatively from `./counter/counter`. Make sure
+      the template is in its own file, with the same name.
 
 .. important::
    Don't forget :code:`/** @odoo-module **/` in your JavaScript files. More information on this can
