@@ -40,5 +40,4 @@ attribute.
    :alt: Animation options
 
 .. seealso::
-   `Website Animate
-   <{GITHUB_PATH}/addons/website/static/src/scss/website.scss#L1605>`_
+   `.o_animate` class in `website.scss <{GITHUB_PATH}/addons/website/static/src/scss/website.scss>`_

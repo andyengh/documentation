@@ -46,7 +46,7 @@ The styles' file structure is the following.
 
 .. admonition:: Demo page
 
-   `http://localhost:8069/website/demo/snippets`
+   http://localhost:8069/website/demo/snippets
 
 Layout
 ======

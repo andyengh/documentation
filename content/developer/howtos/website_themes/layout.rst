@@ -77,18 +77,17 @@ A view is coded the following way.
 
 For each XPath, you modify two attributes: **expression** and **position**.
 
-**Example**
+.. example::
+   .. code-block:: xml
+      :caption: ``/website_airproof/views/website_templates.xml``
 
-.. code-block:: xml
-   :caption: ``/website_airproof/views/website_templates.xml``
+      <template id="layout" inherit_id="website.layout" name="Welcome Message">
+         <xpath expr="//header" position="before">
+            <!-- Content -->
+         </xpath>
+      </template>
 
-   <template id="layout" inherit_id="website.layout" name="Welcome Message">
-      <xpath expr="//header" position="before">
-         <!-- Content -->
-      </xpath>
-   </template>
-
-This XPath adds a welcome message right before the page content.
+   This XPath adds a welcome message right before the page content.
 
 .. warning::
    Be careful when replacing default elements' attributes. As your theme extends the default one,
@@ -162,50 +161,49 @@ below:
    * - attributes
      - Adds the XPath content inside an attribute.
 
-Examples
---------
+.. example::
+   This XPath adds a `<div>` before the `<nav>` that is a direct child of the `<header>`.
 
-This XPath adds a `<div>` before the `<nav>` that is a direct child of the `<header>`.
+   .. code-block:: xml
 
-.. code-block:: xml
+      <xpath expr="//header/nav" position="before">
+         <div>Some content before the header</div>
+      </xpath>
 
-   <xpath expr="//header/nav" position="before">
-      <div>Some content before the header</div>
-   </xpath>
+   This XPath adds `x_airproof_header` in the class attribute of the header. You also need to define
+   a `separator` attribute to add a space before the class you are adding.
 
-This XPath adds `x_airproof_header` in the class attribute of the header. You also need to define a
-`separator` attribute to add a space before the class you are adding.
+   .. code-block:: xml
 
-.. code-block:: xml
+      <xpath expr="//header" position="attributes">
+         <attribute name="class" add="x_airproof_header" separator=" "/>
+      </xpath>
 
-   <xpath expr="//header" position="attributes">
-      <attribute name="class" add="x_airproof_header" separator=" "/>
-   </xpath>
+   This XPath removes `x_airproof_header` in the class attribute of the header. In this case, you
+   don't need to use the `separator` attribute.
 
-This XPath removes `x_airproof_header` in the class attribute of the header. In this case, you don't
-need to use the `separator` attribute.
+   .. code-block:: xml
 
-.. code-block:: xml
+      <xpath expr="//header" position="attributes">
+         <attribute name="class" remove="x_airproof_header" />
+      </xpath>
 
-   <xpath expr="//header" position="attributes">
-      <attribute name="class" remove="x_airproof_header" />
-   </xpath>
+   This XPath removes the first element with a `.breadcrumb` class.
 
-This XPath removes the first element with a `.breadcrumb` class.
+   .. code-block:: xml
 
-.. code-block:: xml
+      <xpath expr="//*[hasclass('breadcrumb')]" position="replace"/>
 
-   <xpath expr="//*[hasclass('breadcrumb')]" position="replace"/>
+   This XPath adds an extra `<li>` element after the last child of the `<ul>` element.
 
-This XPath adds an extra `<li>` element after the last child of the `<ul>` element.
+   .. code-block:: xml
 
-.. code-block:: xml
+      <xpath expr="//ul" position="inside">
+         <li>Last element of the list</li>
+      </xpath>
 
-   <xpath expr="//ul" position="inside">
-      <li>Last element of the list</li>
-   </xpath>
-
-You can find more information about XPath in this `cheat sheet <https://devhints.io/xpath>`_.
+.. seealso::
+   You can find more information about XPath in this `cheat sheet <https://devhints.io/xpath>`_.
 
 QWeb
 ====

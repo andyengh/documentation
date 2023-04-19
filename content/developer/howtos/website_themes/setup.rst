@@ -195,11 +195,10 @@ Shell script
 
 A typical way to :ref:`run the server <reference/cmdline/server>` would be to add all command line arguments to a `.sh` script.
 
-**Example:**
+.. example::
+   .. code-block:: xml
 
-.. code-block:: xml
-
-   ./odoo-bin --addons-path=../enterprise,addons --db-filter=<database> -d <database> --without-demo=all -i website --dev=xml
+      ./odoo-bin --addons-path=../enterprise,addons --db-filter=<database> -d <database> --without-demo=all -i website --dev=xml
 
 .. list-table::
    :header-rows: 1
@@ -208,27 +207,27 @@ A typical way to :ref:`run the server <reference/cmdline/server>` would be to ad
 
    * - Folder
      - Description
-   * - --addons-path
+   * - :option:`--addons-path <odoo-bin --addons-path>`
      - Comma-separated list of directories in which modules are stored. These directories are
        scanned for modules.
-   * - -d
+   * - :option:`-d <odoo-bin --database>`
 
-       --database
+       :option:`--database <odoo-bin --database>`
      - database(s) used when installing or updating modules.
-   * - --db-filter
+   * - :option:`--db-filter <odoo-bin --db-filter>`
      - Hides databases that do not match the filter.
-   * - -i
+   * - :option:`-i <odoo-bin --init>`
 
-       --init
+       :option:`--init <odoo-bin --init>`
      - Comma-separated list of modules to install before running the server. (requires `-d`)
-   * - -u
+   * - :option:`-u <odoo-bin --update>`
 
-       --update
+       :option:`--update <odoo-bin --update>`
      - Comma-separated list of modules to update before running the server. (requires `-d`)
-   * - --without-demo
+   * - :option:`--without-demo <odoo-bin --without-demo>`
      - Disables demo data loading for modules installed comma-separated; use `all` for all modules.
        (requires `-d` and `-i`)
-   * - --dev
+   * - :option:`--dev <odoo-bin --dev>`
      - Comma-separated list of features. For development purposes only. :ref:`More info
        <reference/cmdline/dev>`
 
@@ -236,7 +235,7 @@ Sign in
 -------
 
 After the server has started (the INFO log `odoo.modules.loading: Modules loaded.` is printed), open
-`http://localhost:8069` in your web browser and log in with the base administrator account.
+http://localhost:8069 in your web browser and log in with the base administrator account.
 
 Type **admin** for the email and **admin** for the password.
 

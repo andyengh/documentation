@@ -31,6 +31,8 @@ The first step is to create a new directory.
 .. note::
    Prefix it with `website_` and use only lowercase ASCII alphanumeric characters and underscores.
 
+   In this documentation, we will use **Airproof** (a fictional project) as an example.
+
 File structure
 --------------
 
@@ -56,8 +58,8 @@ package its theme like a module.
     │       ├── scss
     │       └── snippets // custom snippets
     ├── views
-    __init__.py
-    __manifest__.py
+    ├──__init__.py
+    └──__manifest__.py
 
 .. list-table::
    :header-rows: 1
@@ -422,18 +424,17 @@ The colors used in a color combination are accessible and can be overridden thro
    For each `o-cc*`, replace the `*` with the digit (1 - 5) corresponding to the desired color
    combination.
 
-.. note::
    The default text color is `o-color-5`. If the background is too dark, it will automatically
    change to the `o-color-4` color.
 
 .. seealso::
-   `Color combinations SCSS
-   <{GITHUB_PATH}/addons/web_editor/static/src/scss/web_editor.common.scss#L708>`_
+   `$o-color-combinations` loop in `web_editor.common.scss
+   <{GITHUB_PATH}/addons/web_editor/static/src/scss/web_editor.common.scss>`_
 
 .. admonition:: Demo page
 
    The Website Builder automatically generates a page to view the color combinations of the theme
-   color palette: `http://localhost:8069/website/demo/color-combinations`
+   color palette: http://localhost:8069/website/demo/color-combinations
 
 Bootstrap variables
 -------------------
@@ -489,7 +490,7 @@ values and *not* the :file:`primary_variables.scss` file.
 
 .. admonition:: Demo page
 
-   `http://localhost:8069/website/demo/bootstrap`
+   http://localhost:8069/website/demo/bootstrap
 
 Views
 -----
@@ -512,32 +513,33 @@ By reading the source code, templates related to options are easily found.
    <template id="..." inherit_id="..." name="..." active="True"/>
    <template id="..." inherit_id="..." name="..." active="False"/>
 
-**Example**: Changing the menu items' horizontal alignment.
+.. example::
+   **Changing the menu items' horizontal alignment**
 
-.. code-block:: xml
-   :caption: ``/website_airproof/data/presets.xml``
+   .. code-block:: xml
+      :caption: ``/website_airproof/data/presets.xml``
 
-   <record id="website.template_header_default_align_center" model="ir.ui.view">
-      <field name="active" eval="True"/>
-   </record>
+      <record id="website.template_header_default_align_center" model="ir.ui.view">
+         <field name="active" eval="True"/>
+      </record>
 
-The same logic can be used for others Odoo apps as well.
+   The same logic can be used for others Odoo apps as well.
 
-**Example**: eCommerce - Display products categories
+   **eCommerce - Display products categories**
 
-.. code-block:: xml
+   .. code-block:: xml
 
-    <record id="website_sale.products_categories" model="ir.ui.view">
-       <field name="active" eval="False"/>
-    </record>
+       <record id="website_sale.products_categories" model="ir.ui.view">
+          <field name="active" eval="False"/>
+       </record>
 
-**Example**: Portal - Disable the language selector
+   **Portal - Disable the language selector**
 
-.. code-block:: xml
+   .. code-block:: xml
 
-   <record id="portal.footer_language_selector" model="ir.ui.view">
-      <field name="active" eval="False"/>
-   </record>
+      <record id="portal.footer_language_selector" model="ir.ui.view">
+         <field name="active" eval="False"/>
+      </record>
 
 Assets
 ======
@@ -567,16 +569,15 @@ file to your theme.
 Feel free to reuse the variables from your Bootstrap file and the ones used by Odoo in your
 :file:`theme.scss` file.
 
-**Example**
+.. example::
+   .. code-block:: javascript
+      :caption: ``/website_airproof/static/src/scss/theme.scss``
 
-.. code-block:: javascript
-   :caption: ``/website_airproof/static/src/scss/theme.scss``
-
-    blockquote {
-      border-radius: $rounded-pill;
-      color: o-color('o-color-3');
-      font-family: o-website-value('headings-font');
-    }
+       blockquote {
+         border-radius: $rounded-pill;
+         color: o-color('o-color-3');
+         font-family: o-website-value('headings-font');
+       }
 
 Interactivity
 -------------
